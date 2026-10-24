@@ -476,4 +476,6 @@ if __name__ == "__main__":
     print("--- Hitting Set Oracle Circuit ---")
     print(oracle_qc.draw(output='text'))
     print_state_vector(oracle_qc, "Final State Vector hitting set oracle circuit")
+
+    measure_phase_amplitude(qpe_qc, G.m, G.N, shots=1024)
   
