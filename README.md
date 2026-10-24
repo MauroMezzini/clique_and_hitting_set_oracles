@@ -82,7 +82,7 @@ The code is written in **Python 3** and requires the following external packages
 Run the main module directly to execute demo instances for both a 5-vertex graph ($k=3$ clique oracle) and a 5-vertex hypergraph ($k=3$ hitting set oracle):
 
 ```bash
-python GEO_andHEO.py
+python GEO_and_HEO.py
 ```
 
 ### Example Code Snippet
