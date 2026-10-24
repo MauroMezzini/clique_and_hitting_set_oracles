@@ -88,7 +88,7 @@ python GEO_and_HEO.py
 ### Example Code Snippet
 
 ```python
-from main import hypergraph, clique_oracle_circuit, print_state_vector
+from GEO_and_HEO import hypergraph, clique_oracle_circuit, print_state_vector
 
 # Define vertices and edges for a simple graph
 vertices = [0, 1, 2, 3, 4]
