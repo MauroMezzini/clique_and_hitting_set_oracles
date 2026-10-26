@@ -24,7 +24,7 @@ This repository contains Python routines to build and simulate quantum oracle ci
 ## Key Features
 
 * **Hypergraph & Graph Data Structure:** Automatically classifies graph types based on edge cardinality and determines phase-register size requirements.
-* **Quantum Phase Encoding:** Encodes topological properties into quantum phase registers using controlled phase and multi-controlled phase gates.
+* **Quantum Phase Estimation:** Estimates topological properties into quantum phase registers using controlled phase and multi-controlled phase gates.
 * **Arithmetic Circuits:** Includes custom little-endian incrementer (`+1`) and decrementer (`-1`) quantum subroutines using multi-controlled $X$ gates.
 * **Problem Oracles:**
   * **Clique Oracle:** Marks vertex subsets forming $k$-cliques on ordinary graphs.
@@ -38,7 +38,7 @@ This repository contains Python routines to build and simulate quantum oracle ci
 ### 1. Data Representation
 The `hypergraph` class stores vertices and edges. If every edge contains exactly 2 vertices, it is classified as `"graph"`; otherwise, it is classified as `"hypergraph"`. It dynamically allocates $m = 1 + \lceil \log_2(M) \rceil$ counting qubits for the phase register, where $M$ is the number of edges.
 
-### 2. Phase Encoding Operators
+### 2. Phase Estimation Operators
 * **`graph_encoding_operator`**: Applies controlled-phase ($\text{CP}$) gates across endpoint qubits for standard graphs.
 * **`hypergraph_encoding_operator`**: Applies single-qubit phase gates based on vertex degree and multi-controlled phase ($\text{MCP}$) gates across hyperedge subsets.
 * **`phase_encoding_operator`**: Assembles the QPE circuit by driving controlled powers of the encoding operator followed by an inverse Quantum Fourier Transform ($\text{QFT}^\dagger$).
