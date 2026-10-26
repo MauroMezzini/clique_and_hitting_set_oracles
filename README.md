@@ -41,7 +41,7 @@ The `hypergraph` class stores vertices and edges. If every edge contains exactly
 ### 2. Phase Estimation Operators
 * **`graph_encoding_operator`**: Applies controlled-phase ($\text{CP}$) gates across endpoint qubits for standard graphs.
 * **`hypergraph_encoding_operator`**: Applies single-qubit phase gates based on vertex degree and multi-controlled phase ($\text{MCP}$) gates across hyperedge subsets.
-* **`phase_encoding_operator`**: Assembles the QPE circuit by driving controlled powers of the encoding operator followed by an inverse Quantum Fourier Transform ($\text{QFT}^\dagger$).
+* **`phase_estimation_operator`**: Assembles the QPE circuit by driving controlled powers of the encoding operator followed by an inverse Quantum Fourier Transform ($\text{QFT}^\dagger$).
 
 ### 3. Oracle Circuits
 Both oracles use a phase-kickback flag qubit prepared in the $\ket{-} = \frac{\ket{0} - \ket{1}}{\sqrt{2}}$ state:
