@@ -148,7 +148,7 @@ def hypergraph_encoding_operator(H, theta, apply_global_phase=False):
         qc.global_phase = -theta * num_edges
     return qc
 
-def phase_encoding_operator(G, is_superposition=True):
+def phase_estimation_circuit(G, is_superposition=True):
     """Construct a quantum phase-estimation circuit for graph encoding.
 
     The first ``G.m`` qubits form the phase register, and the following
@@ -298,7 +298,7 @@ def clique_oracle_circuit(G, k):
     # Apply phase estimation to the graph encoding using the leading phase
     # register and the following vertex-selection register.
     # Superposition is applied to the vertex selection just for testing porpouse.
-    qpe_qc = phase_encoding_operator(G, is_superposition=True)
+    qpe_qc = phase_estimation_circuit(G, is_superposition=True)
     oracle_qc.compose(qpe_qc, inplace=True)
 
     # Initialize the weight register to -k in two's-complement form. Adding
@@ -364,7 +364,7 @@ def hitting_set_oracle_circuit(G, k):
 
     # Run phase estimation on the hypergraph encoding.
     # Superposition is applied to the vertex selection just for testing porpouse.
-    qpe_qc = phase_encoding_operator(G, is_superposition=True)
+    qpe_qc = phase_estimation_circuit(G, is_superposition=True)
     oracle_qc.compose(qpe_qc, inplace=True)
 
     # Initialize the weight register to k in binary.
@@ -457,7 +457,7 @@ if __name__ == "__main__":
     vertices = [0,1,2,3, 4]
     edges = [(0, 1), (1, 2), (2, 0), (0, 3), (2, 4)]  # 0-indexed vertices
     G = hypergraph(vertices, edges)
-    qpe_qc = phase_encoding_operator(G, is_superposition=True)
+    qpe_qc = phase_estimation_circuit(G, is_superposition=True)
     print_state_vector(qpe_qc, "Phase State Vector")
     oracle_qc = clique_oracle_circuit(G, k=3)
     print("--- Clique Oracle Circuit ---")
@@ -470,7 +470,7 @@ if __name__ == "__main__":
     vertices=[0,1,2,3,4]
     edges=[{0,3}, {0,4}, {1,3, 4}, {0,1, 2}, {2,3, 4}]
     G = hypergraph(vertices, edges)
-    qpe_qc = phase_encoding_operator(G, is_superposition=True)
+    qpe_qc = phase_estimation_circuit(G, is_superposition=True)
     print_state_vector(qpe_qc, "Phase State Vector")
     oracle_qc = hitting_set_oracle_circuit(G, k=3)
     print("--- Hitting Set Oracle Circuit ---")
