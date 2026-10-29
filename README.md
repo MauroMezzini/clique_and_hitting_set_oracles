@@ -1,6 +1,6 @@
 # Quantum Graph & Hypergraph Phase Encoding Oracles
 
-A Qiskit-based framework implementing Quantum Phase Estimation (QPE) and quantum oracle circuits for graph and hypergraph problem instances, specifically designed for finding **$k$-Cliques** and **Hitting Sets**.
+A Qiskit-based framework implementing Quantum Phase Estimation (QPE) and quantum oracle circuits for graph and hypergraph problem instances, specifically designed for finding **Cliques** and **Hitting Sets**.
 
 ## Table of Contents
 - [Overview](#overview)
